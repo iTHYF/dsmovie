@@ -18,13 +18,13 @@ public class ScoreService {
 	
 	@Autowired
 	private MovieRepository movieRepository;
-
+		
 	@Autowired
 	private UserRepository userRepository;
 	
 	@Autowired
 	private ScoreRepository scoreRepository;
-
+	
 	@Transactional
 	public MovieDTO saveScore(ScoreDTO dto) {
 		
@@ -33,7 +33,6 @@ public class ScoreService {
 			user = new User();
 			user.setEmail(dto.getEmail());
 			user = userRepository.saveAndFlush(user);
-			
 		}
 		
 		Movie movie = movieRepository.findById(dto.getMovieId()).get();
@@ -50,7 +49,7 @@ public class ScoreService {
 			sum = sum + s.getValue();
 		}
 		
-		double avg = sum/movie.getScores().size();
+		double avg = sum / movie.getScores().size();
 		
 		movie.setScore(avg);
 		movie.setCount(movie.getScores().size());
