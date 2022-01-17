@@ -17,4 +17,4 @@ function Pagination() {
 
     );
 }
-export default Pagination;
+export default Pagination; 

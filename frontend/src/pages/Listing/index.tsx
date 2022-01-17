@@ -1,8 +1,8 @@
-import axios from "axios";
+import axios from 'axios';
 import { useEffect, useState } from "react";
 import React from 'react';
 import MovieCard from '../../components/MovieCard';
-import Pagination from "../../components/Navbar/Pagination";
+import Pagination from '../../components/Navbar';
 import { BASE_URL } from "utils/requests";
 import { MoviePage } from "types/movie";
 
@@ -56,4 +56,5 @@ function Listing() {
         </>
     );
 }
+
 export default Listing;
